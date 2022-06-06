@@ -16,3 +16,4 @@ use App\Http\Controllers\assignmentController;
 */
 
 Route::get('/palindroms', [assignmentController::class, 'findPalindroms'])->name("find-palindorms");
+Route::get('/time', [assignmentController::class, 'secondsCount'])->name("find-palindorms");
