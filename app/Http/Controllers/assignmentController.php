@@ -33,8 +33,15 @@ class assignmentController extends Controller
     public function text()
     {
         $url = 'https://icanhazdadjoke.com/slack';
-
         $contents = json_decode(file_get_contents($url), true)["attachments"][0]['text'];
-        echo $contents;
+        return response()->json(['Joke' => $contents], 200);
+    }
+
+    public function getRecipe()
+    {
+        $url = 'https://api.punkapi.com/v2/beers';
+        $contents = json_decode(file_get_contents($url), true);
+        $num = rand(0, count($contents));
+        return response()->json(['Beer Recipe' => $contents[$num]], 200);
     }
 }
