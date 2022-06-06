@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class assignmentController extends Controller
 {
     public $arr = ['mamamiya', 'hello', 'abba'];
-    public $names = ['mira', 'raya', 'Pablo', 'yousef', 'john'];
+    public $names = ['Mira', 'Raya', 'Pablo', 'Yousef', 'John', 'Ahmad', 'Shaza', 'Obama', 'hilda'];
 
     public function findPalindroms()
     {
@@ -63,6 +63,24 @@ class assignmentController extends Controller
                 $nominee = $i[0];
             }
         }
-        echo $nominee;
+        return response()->json(['Nominee:' => $nominee], 200);
+    }
+
+    public function makeTeams()
+    {
+        $teams = [];
+        $names = [...$this->names];
+        while ($names) {
+            if (count($names) >= 2) {
+                $vals = array_rand($names, 2);
+                unset($names[$vals[0]]);
+                unset($names[$vals[1]]);
+                array_push($teams, [$this->names[$vals[0]], $this->names[$vals[1]]]);
+            } else {
+                array_push($teams, [$this->names[array_rand($names)]]);
+                unset($names[array_rand($names)]);
+            }
+        }
+        return response()->json(['Teams:' => $teams], 200);
     }
 }
