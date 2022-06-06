@@ -14,3 +14,5 @@ use App\Http\Controllers\assignmentController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::get('/palindroms', [assignmentController::class, 'findPalindroms'])->name("find-palindorms");
