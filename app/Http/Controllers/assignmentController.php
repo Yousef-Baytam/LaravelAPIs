@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class assignmentController extends Controller
 {
-    public $arr = ['mamamiya', 'hello', 'abba'];
+    public $arr = ['mamamiya', 'hello', 'abba', 'cc77677cc'];
     public $names = ['Mira', 'Raya', 'Pablo', 'Yousef', 'John', 'Ahmad', 'Shaza', 'Obama', 'hilda'];
 
     public function findPalindroms()
