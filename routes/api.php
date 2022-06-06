@@ -19,3 +19,5 @@ Route::get('/palindroms', [assignmentController::class, 'findPalindroms'])->name
 Route::get('/time', [assignmentController::class, 'secondsCount'])->name("get-seconds-count");
 Route::get('/joke', [assignmentController::class, 'text'])->name("get-text");
 Route::get('/beerRecipe', [assignmentController::class, 'getRecipe'])->name("get-recipe");
+Route::get('/nominee', [assignmentController::class, 'getNominee'])->name("get-nominee");
+Route::get('/teams', [assignmentController::class, 'makeTeams'])->name("get-Teams");
